@@ -3,6 +3,7 @@ const { connect } = require("./utils/connect");
 const MONGO_URI =
   process.env.MONGO_URI || "mongodb://localhost:27017/shell-demo";
 const { User } = require("./models");
+const { UserFactory } = require("./factories");
 
 (async () => {
   console.log("connecting to database...");
@@ -18,6 +19,7 @@ const { User } = require("./models");
 // These will be globals for the repl
 const context = {
   User,
+  UserFactory,
 };
 
 function startRepl() {
